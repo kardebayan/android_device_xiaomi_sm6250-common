@@ -178,6 +178,7 @@ VENDOR_SECURITY_PATCH := 2021-07-01
 # Sepolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 #BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+BUILD_BROKEN_ENFORCE_SYSPROP_OWNER := true
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
