@@ -222,6 +222,29 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
 
+# Misc
+ATOLL := atoll #SM6250
+QCOM_BOARD_PLATFORMS += $(ATOLL)
+UM_4_14_FAMILY := $(ATOLL)
+QSSI_SUPPORTED_PLATFORMS := $(UM_4_14_FAMILY)
+TARGET_BOARD_PLATFORM := ATOLL
+
+SOONG_CONFIG_qtidisplay_drmpp := true
+TARGET_USES_DRM_PP := true
+
+TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS += | (1 << 27)
+MASTER_SIDE_CP_TARGET_LIST := $(UM_4_14_FAMILY)
+MSM_VIDC_TARGET_LIST := $(UM_4_14_FAMILY)
+QCOM_HARDWARE_VARIANT := sm6250
+
+QCOM_SOONG_NAMESPACE := hardware/qcom-caf/$(QCOM_HARDWARE_VARIANT)
+PRODUCT_SOONG_NAMESPACES += $(QCOM_SOONG_NAMESPACE)
+
+PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/commonsys-intf/display
+PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/data-ipa-cfg-mgr
+PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/dataservices
+PRODUCT_SOONG_NAMESPACES += packages/apps/bluetooth
+
 # OMX
 PRODUCT_PACKAGES += \
     libOmxAacEnc \
