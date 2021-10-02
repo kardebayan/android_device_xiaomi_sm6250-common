@@ -20,6 +20,6 @@ cc_library_static {
     name: "init_xiaomi_atoll",
     srcs: ["init_xiaomi_atoll.cpp"],
     whole_static_libs: ["libinit_xiaomi_atoll"],
-    include_dirs: ["system/core/init"],
+    include_dirs: ["system/libbase/init"],
     recovery_available: true,
 }
