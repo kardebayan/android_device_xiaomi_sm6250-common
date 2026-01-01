@@ -56,6 +56,9 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml
 
+# Blur
+TARGET_ENABLE_BLUR := true
+
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
@@ -146,6 +149,9 @@ PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay-service.sdm
 
 $(call soong_config_set_bool,livedisplay_sdm,enable_dm,false)
+
+# Matlog
+TARGET_DISABLE_MATLOG := true
 
 # Media
 PRODUCT_COPY_FILES += \
